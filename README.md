@@ -4,8 +4,8 @@ Coming soon!
 
 ## Recommended skills
 
-- **Python XP** - at least the first 15 days of [30 Days of Python](https://www.youtube.com/playlist?list=PLEsfXFp6DpzQjDBvhNy5YbaBx9j-ZsUe6))
-- **Django XP** - the first 30 videos of the Try Django playlist](https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL) or the [Your First Django Project course](https://www.codingforentrepreneurs.com/courses/your-first-django-project/)
+- **Python XP** - at least the first 15 days of [30 Days of Python](https://www.youtube.com/playlist?list=PLEsfXFp6DpzQjDBvhNy5YbaBx9j-ZsUe6)
+- **Django XP** - the first 30 videos of the [Try Django playlist](https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL) or the [Your First Django Project course](https://www.codingforentrepreneurs.com/courses/your-first-django-project/)
 
 
 ## Prepare your Domain

@@ -36,6 +36,8 @@ def slack_events_endpoint(request):
             msg_text = event.get('text')
         user_id = event.get('user')
         channel_id = event.get('channel')
-        r = slacky.send_message(msg_text, channel_id=channel_id, user_id=user_id)
+        msg_ts = event.get('ts')
+        thread_ts = event.get('thread_ts')  or msg_ts
+        r = slacky.send_message(msg_text, channel_id=channel_id, user_id=user_id, thread_ts=thread_ts)
         return HttpResponse("Success", status=200)
     return HttpResponse("Success", status=200)

@@ -10,13 +10,15 @@ import helpers
 SLACK_BOT_OAUTH_TOKEN = helpers.config('SLACK_BOT_OAUTH_TOKEN', default=None, cast=str)
 
 
-def send_message(message, channel_id=None):
+def send_message(message, channel_id=None, user_id=None):
     url ="https://slack.com/api/chat.postMessage"
     headers = {
         "Content-Type": "application/json; charset=utf-8",
         "Authorization": f"Bearer {SLACK_BOT_OAUTH_TOKEN}",
         "Accept": "application/json"
     }
+    if user_id is not None:
+        message = f"<@{user_id}> {message}"
     data = {
         "channel": f"{channel_id}",
         "text": f"{message}".strip()
@@ -52,8 +54,8 @@ def slack_events_endpoint(request):
             msg_text = event['blocks'][0]['elements'][0]['elements'][1]['text']
         except:
             msg_text = event.get('text')
-        # user_id = event.get('user')
+        user_id = event.get('user')
         channel_id = event.get('channel')
-        r = send_message(msg_text, channel_id=channel_id)
+        r = send_message(msg_text, channel_id=channel_id, user_id=user_id)
         return HttpResponse("Success", status=200)
     return HttpResponse("Success", status=200)

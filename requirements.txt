@@ -1,3 +1,7 @@
 Django
 python-decouple
 requests
+Celery
+Redis
+django-celery-beat 
+django-celery-results

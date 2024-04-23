@@ -14,9 +14,16 @@ def slack_events_endpoint(request):
     except Exception as e:
         pass
     data_type = json_data.get('type')
-    if data_type != "url_verification":
+    print(data_type, json_data)
+    allowed_data_type = [
+        "url_verification",
+        "event_callback"
+    ]
+    if data_type not in allowed_data_type:
         return HttpResponse("Not Allowed", status=400)
-    challenge = json_data.get('challenge')
-    if challenge is None:
-        return HttpResponse("Not Allowed", status=400)
-    return HttpResponse(challenge, status=200)
+    if data_type == "url_verification":
+        challenge = json_data.get('challenge')
+        if challenge is None:
+            return HttpResponse("Not Allowed", status=400)
+        return HttpResponse(challenge, status=200)
+    return HttpResponse("Success", status=200)

@@ -7,3 +7,4 @@ django-celery-beat
 django-celery-results
 openai
 jupyter
+llama-index

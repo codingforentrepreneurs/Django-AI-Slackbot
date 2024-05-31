@@ -1,6 +1,6 @@
 # Create an AI Slackbot with Django 
 
-Coming soon!
+[Watch it now](https://www.youtube.com/watch?v=Rol2SR11oZU)
 
 ## Recommended skills
 
